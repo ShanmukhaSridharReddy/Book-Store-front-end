@@ -1,0 +1,23 @@
+<div class="book-card-outer-cnt" >
+    <div class="book-card-inner-cnt" (click)="handleNavigation()" >
+       <div class="book-img-cnt">
+         <img [src]="bookObj.image" alt=""height = 135px width="105px">
+       </div>
+        
+        <div  class="inner-cnt2"> 
+            <div class="book-title-cnt">
+                <span >{{bookObj.title}}</span>
+            </div>
+            
+            <span class="book-author-cnt">{{bookObj.author}}</span>
+            
+            <div class="book-rating-cnt">
+                <span style="background: #388E3C 0% 0% no-repeat padding-box;border-radius: 1px;opacity: 1;color: white;">4.5</span>   
+                <span style="font: normal normal normal 10px/13px Roboto;letter-spacing: 0px;color: #878787;opacity: 1;">(20)</span>
+            </div>
+            <div class="book-price-cnt">
+                <span>Rs.{{bookObj.price}}</span>  
+            </div>
+        </div>  
+    </div>
+</div>

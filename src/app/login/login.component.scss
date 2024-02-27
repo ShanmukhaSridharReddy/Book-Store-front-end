@@ -1,0 +1,306 @@
+// ::ng-deep .app-login
+// {
+//     display: block;
+//     width: 100%;
+//     height:100vh;
+//     background-color: gray;
+// }
+// .whole-login-cnt
+// {
+    
+    
+//     width: 624px;
+//     height: 391px;
+//     background: #F5F5F5 0% 0% no-repeat padding-box;
+//     border-radius: 21px;
+//     opacity: 1;
+//     display: flex;
+//     align-items: center;
+// }
+// .img-outer-cnt
+// {
+//     top:20px;
+//     display: flex;
+//     flex-direction: column;
+//     position: relative;
+//     left: 45px;
+// }
+
+// img{
+//     border-radius: 50%;
+//     width: 245px;
+//     height: 245px;
+//     /* UI Properties */
+//     opacity: 1;
+    
+// }
+// .login-signup-cnt{
+//     position: absolute;
+//     top:-18px;
+//     left:330px;
+//     width: 389px;
+//     height: 425px;
+//     /* UI Properties */
+//     background: #FFFFFF 0% 0% no-repeat padding-box;
+//     box-shadow: 0px 5px 15px #00000029;
+//     border: 1px solid #E4E4E4;
+//     border-radius: 6px;
+//     opacity: 1;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     padding:40px 60px;
+//     box-sizing: border-box;
+// }
+
+// .button-cnt{
+//     display: flex;
+//     justify-content: space-between; 
+//     align-items: center;
+// }
+// .input-field
+// {
+//     width: 252px;
+//     height: 35px;
+//     /* UI Properties */
+//     background: #FFFFFF 0% 0% no-repeat padding-box;
+//     border: 1px solid #E2E2E2;
+//     border-radius: 2px;
+//     opacity: 1;
+    
+// }
+// #login-button
+// {
+//     width: 252px;
+//     height: 37px;
+//     /* UI Properties */
+//     background: #A03037 0% 0% no-repeat padding-box;
+//     border-radius: 3px;
+//     opacity: 1;
+//     color: #FFFFFF;
+// }
+// .line
+// {
+//     width: 64px;
+//     height: 0px;
+//     /* UI Properties */
+//     border: 1px solid #E1E4EA;
+//     opacity: 1;
+//     margin: 5px;;
+// }
+// #facebook-button
+// {
+//     width: 126px;
+//     height: 37px;
+//     /* UI Properties */
+//     background: #4266B2 0% 0% no-repeat padding-box;
+//     border-radius: 3px;
+//     opacity: 1;
+//     color: #FFFFFF;
+// }
+// #Google-button
+// {
+//     width: 119px;
+//     height: 37px;
+//     /* UI Properties */
+//     background: #F5F5F5 0% 0% no-repeat padding-box;
+//     border: 1px solid #E4E4E4;
+//     border-radius: 3px;
+//     opacity: 1;
+// }
+.login-signup-outer-cnt
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #878787 0% 0% no-repeat padding-box;
+}
+.login-signup-inner-cnt{
+    width: 54%;
+    height: 425px;
+    display: flex;
+    align-items: center;
+    
+}
+.img-banner-cnt{
+    width:47% ;
+    background: #F5F5F5 0% 0% no-repeat padding-box;
+    border-top-left-radius:21px ;
+    opacity: 1;
+    height: 391px;
+    border-bottom-left-radius:21px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    div {
+        display:flex;
+        flex-direction: column;
+        gap: 31px;
+        justify-content: center;
+        
+        &:nth-child(1) {
+            width: 245px;
+            height: 245px;
+            // background-color: red;
+            img {
+                
+                border-radius: 50%;
+            }
+        }
+        &:nth-child(2) {
+            span{
+                text-align: left;
+                font: normal normal 500 18px/24px Roboto;
+                letter-spacing: 0px;
+                color: #0A0102;
+                text-transform: uppercase;
+                opacity: 1;
+            }    
+        }
+    }
+
+    
+    
+}
+.login-signup-cnt{
+    width:53% ;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 5px 15px #00000029;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    opacity: 1;
+    height: 425px;
+}
+.login-signup-ctrl-cnt{
+    margin: 28px 68px 57px 68px;
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap:24px
+}
+.login-signup-title-cnt{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.top-tittle{
+    height: 38px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    span{
+        text-align: left;
+        font: normal normal 500 25px/33px Roboto;
+        letter-spacing: 0px;
+        color: #0A0102;
+        text-transform: uppercase;
+        opacity: 1;
+    }
+}
+.title-highliter{
+    width: 22px;
+    height:5px;
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 4px;
+    opacity: 1;
+}
+.login-forgotpassword-cnt{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    //align-items: end;
+}
+.or-cnt{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span{
+        font: normal normal bold 14px/18px Meiryo UI;
+        letter-spacing: 0px;
+        color: #343434;
+        text-transform: uppercase;
+        opacity: 1;
+
+    }
+}
+.forgot-btn{
+    width: fit-content !important;
+    padding : 0px 8px;
+    align-self: self-end;
+}
+.login-btn{
+    color: #FFFFFF;
+    
+    height: 37px;
+    background: #A03037 0% 0% no-repeat padding-box;
+    border-radius: 3px;
+    opacity: 1;
+    
+    font: normal normal normal 15px/20px Roboto;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+.login-field{
+    width: 100%;
+    height: 35px;
+}
+.mat-form-field-wrapper{
+    padding: 0px !important;
+    height: 35px !important;
+
+}
+.mat-form-field-flex
+{
+    height: 35px;
+}
+.mat-input-element{
+    height: 35px;
+}
+.mat-form-field-infix{
+    border: 0px !important;
+    padding: 0px !important;
+}
+.dash{
+    width: 26%;
+    border: 1px solid #E1E4EA;
+    opacity: 1;
+}
+.facebook-btn-cnt{
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    
+    button:nth-child(1){
+        width: 50%;
+        
+    }
+    button:nth-child(2){
+        width: 47%;
+        background-color: #F5F5F5;
+        color: #0A0102;
+    }
+}
+@media only screen and (min-width:280px)and(max-width:500px) {
+    .img-banner-cnt{
+        display: none;
+    }
+    .login-signup-inner-cnt{
+        width: 90%;
+    }
+    .login-signup-cnt{
+        width: 100%;
+    }
+    .login-signup-ctrl-cnt{
+        margin:20px ;
+        width: 88%;
+    }
+}

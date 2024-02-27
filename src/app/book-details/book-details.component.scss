@@ -1,0 +1,86 @@
+
+.book-info-tile{
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.book-info-author{
+    color:rgb(112, 111, 111)
+    ;font-weight: 600;
+    font-family: sans-serif;
+}
+
+.book-info-rating{
+  background-color:green;
+  color: white;
+  font-weight: 600;
+  width:38px;
+  border-radius:2px;
+  padding-left: 7px;
+
+}
+
+.book-info-quantity{
+    color:rgb(112, 111, 111);
+   
+}
+
+.book-info-price{
+    font-weight: 700;
+    font-family:  'Trebuchet MS';
+    font-size: 30px; 
+}
+.book-info-debricated{
+    font-weight: 600px;
+    font-family:  'Trebuchet MS';
+    font-size: 20px;
+    color: rgb(81, 79, 79);
+    padding-top: 8px;
+}
+
+.bookdatil-static-line{
+    font-weight: 600px;
+    font-family:  'Trebuchet MS';
+    font-size: 15px;
+    width: max-content;
+color: rgb(66, 65, 65);
+padding-top: 8px;
+
+}
+
+.bookdatil-static-line::before {
+    content: '\2022'; /* Unicode character for a bullet point */
+    color: rgb(126, 122, 122); /* Set the color of the bullet point */
+    margin-right: 5px; /* Adjust the space between the bullet and the text */
+  }
+
+  .bookinfo-deatil{
+    font-weight: 500px;
+    font-family:  'Trebuchet MS';
+    font-size: 15px;
+   color: rgb(66, 65, 65);
+   padding-left: 15px;
+
+  }
+
+  .customer-static-line{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(97, 99, 227);
+    font-family: sans-serif;
+    margin-top: -14px;
+  }
+
+
+  .feedback-main-cnt{
+
+
+height: 192px;
+/* UI Properties */
+background: #F5F5F5 0% 0% no-repeat padding-box;
+border-radius: 2px;
+opacity: 0.63;
+  }
+//   .overall-rating-static-cnt{
+    
+//   }

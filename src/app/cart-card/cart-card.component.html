@@ -1,0 +1,24 @@
+<div class="outer-cnt">
+    <div class="inner-cnt">
+        <div class="book-image-cnt">
+            <img [src]="cartObj.image" alt="" style="width: 65px;height: 85px;" >
+        </div>
+        <div class="book-details-cnt">
+            <span class="title">{{cartObj.title}}</span>
+            <span class="author">{{cartObj.author}}</span>
+            <div>
+                <span class="price">Rs.{{showQuantitySection ? cartObj.price:cartObj.price*cartObj.quantity}}</span>
+                <span class="original-price">Rs.2000</span>
+            </div>
+
+        </div>
+    </div>
+    
+        <div class="quantity-cnt">
+            <button class = "add-reduce-btn" (click)="handleBookQuantity('dec')" >-</button>
+            <input type="number" class="input-field" [(ngModel)]="cartObj.quantity" >
+            <button class = "add-reduce-btn" (click)="handleBookQuantity('inc')">+</button>
+            <label class="remove" >Remove</label>
+          </div>
+    
+</div>

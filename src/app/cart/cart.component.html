@@ -1,0 +1,131 @@
+<div class="cart-outer-cnt">
+    <div class="header-title-cnt">
+        <span class="home-title">Home/</span>
+        <span class="mycart-title">My cart</span>
+    </div>
+    <div class="cart-inner-cnt">
+        
+        <div class="inner-header-cnt">
+            <div class="inner-mycart-title">
+
+                <span >My cart</span>
+                <span>({{cartItems.length}})    </span>
+            </div>
+            
+            <div class="location-cnt">
+                <mat-icon  svgIcon="location-icon"  aria-hidden="false" aria-label="Note SVG icon" ></mat-icon>
+                <!-- <span>Use my current location</span> -->
+                <select style="border: none;outline: none; padding: 10px;width: 204px;">
+                    <option value="1">Use my current location</option>
+                    <option value="2">Address</option>
+                </select>
+            </div>
+
+        </div>
+        <div *ngFor="let cart of cartItems" >
+
+            <app-cart-card [cartObj] = "cart"></app-cart-card>
+            
+        </div>
+        <div class="placeorder-btn-cnt">
+            <button class="placeorder-btn" *ngIf="placeOrder else empty" (click)="togglePlaceOrder()">Place Order</button>
+            <ng-template #empty>
+
+            </ng-template>
+        </div>
+
+    </div>
+    <div class="address-details-cnt" *ngIf="placeOrder else addressComponent">
+        <span>Address Details</span>
+    </div>
+    <ng-template #addressComponent>
+        <!-- <div *ngFor="let address of addressList">
+            <app-address [addressObj]="address"></app-address>
+        </div> -->
+        
+                <div class="address-outer-cnt">
+                    <div class="inner-cnt">
+                        <div class="address-header-cnt">
+                            <span >Customer Details</span>
+                            <div class="button-cnt" (click)="showDefaultForm()" ><button >Add New Address</button></div>
+                        </div>
+                        <div class="address-input-field-cnt">
+                            
+                                <div class="name-phone-no-cnt">
+                                <div class="fullname-cnt">
+                                    <span class="input-header">FullName</span>
+                                    <input type="text" class="input-tag" [(ngModel)]="fullName">
+                                </div>
+                                <div class="fullname-cnt">
+                                    <span class="input-header">MobileNumber</span>
+                                    <input type="text" class="input-tag" [(ngModel)]="mobileNumber">
+                                </div>
+                                </div>
+
+                            <div *ngIf="showDefault else addressCard">
+                                <div class="address-cnt" >
+                                <span class="input-header">Address</span>
+                                <textarea name="" id="" cols="68" rows="10" style="resize: none;" [(ngModel)]="fulladdress"></textarea>
+                                </div>
+                                <div class="name-phone-no-cnt">
+                                    <div class="fullname-cnt">
+                                    <span class="input-header">city/town</span>
+                                    <input type="text" class="input-tag" [(ngModel)]="city">
+                                    </div>
+                                    <div class="fullname-cnt">
+                                        <span class="input-header">state</span>
+                                        <input type="text" class="input-tag" [(ngModel)]="state">
+                                    </div>
+                                </div>
+
+                                <div class="address-type-cnt">
+                                    <span>Type</span>
+                                    <div class="radio-btn-cnt">
+                                        <div>
+                                            <input type="radio" name="addressType" [(ngModel)]="addressType" [value]="1">
+                                            <label for="">Home</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="addressType" [(ngModel)]="addressType" [value]="2">
+                                            <label for="">Work</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="addressType" [(ngModel)]="addressType" [value]="3">
+                                            <label for="">Other</label>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <ng-template #addressCard>
+                        <div *ngFor="let address of addressList;let i = index" style="display: flex; flex-direction: column; row-gap: 10px;position: relative;right: 20px;">
+                            <div style = "display: flex;">
+                                <input type = 'radio' name = "address-radio" value = "address{{i +1}}" style="align-self: self-start;"[checked] = "checkValue == input.value"(click) = "changeValue(i+1)" #input>
+                                <app-address [addressObj]="address" (handleAddressId)="handleAddressId($event)"></app-address>
+                            </div>
+                        </div>
+                    </ng-template>
+                    <div class="continue-btn-cnt">
+                        <button *ngIf="continue else empty" (click)="handleContinue()">Continue</button>
+                        <ng-template #empty></ng-template>
+                    </div>
+
+                </div>
+
+    <!-- </ng-template> -->
+    <div class="address-details-cnt" *ngIf="continue">
+        <span>Order Summary</span>
+    </div>
+    <div class="order-summary-details" *ngIf = "!continue" style="display: flex;flex-direction: column;">
+        <div >
+            <span>Order Summary</span>
+        </div>
+        <div *ngFor="let cart of cartItems" >
+            <app-cart-card [cartObj]="cart" [showQuantitySection]="false"></app-cart-card>
+        </div>
+        <div class="check-out-btn" style="align-self:self-end">
+            <button (click)="orderAllItems()">CheckOut</button>
+        </div>
+    </div>
+</div>

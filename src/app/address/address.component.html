@@ -1,0 +1,115 @@
+<!-- 
+<div class="address-outer-cnt">
+    <div class="inner-cnt">
+        <div class="address-header-cnt">
+            <span >Customer Details</span>
+            <div class="button-cnt" ><button >Add New Address</button></div>
+        </div>
+        <div class="address-input-field-cnt" #addNewAddress>
+            
+                <div class="name-phone-no-cnt">
+                   <div class="fullname-cnt">
+                    <span class="input-header">FullName</span>
+                    <input type="text" class="input-tag" [(ngModel)]="addressObj.fullName">
+                   </div>
+                   <div class="fullname-cnt">
+                       <span class="input-header">MobileNumber</span>
+                       <input type="text" class="input-tag" [(ngModel)]="addressObj.phoneNo">
+                   </div>
+                </div>
+
+                 
+                <div class="address-cnt">
+                <span class="input-header">Address</span>
+                 <textarea name="" id="" cols="68" rows="10" style="resize: none;" [(ngModel)]="addressObj.fullAddress"></textarea>
+                </div>
+                <div class="name-phone-no-cnt">
+                    <div class="fullname-cnt">
+                     <span class="input-header">city/town</span>
+                     <input type="text" class="input-tag" [(ngModel)]="addressObj.city">
+                    </div>
+                    <div class="fullname-cnt">
+                        <span class="input-header">state</span>
+                        <input type="text" class="input-tag" [(ngModel)]="addressObj.state">
+                    </div>
+                 </div>
+
+                 <div class="address-type-cnt">
+                    <span>Type</span>
+                    <div class="radio-btn-cnt">
+                        <div>
+                            <input type="radio">
+                            <label for="">Home</label>
+                        </div>
+                        <div>
+                            <input type="radio">
+                            <label for="">Work</label>
+                        </div>
+                        <div>
+                            <input type="radio">
+                            <label for="">Other</label>
+                        </div>
+                    </div>
+        
+        </div>
+    </div>
+    <div class="continue-btn-cnt">
+        <button>Continue</button>
+
+    </div>
+
+</div> -->
+
+
+
+
+
+
+
+<div *ngIf="editTemplate else Withdata " style=" border: 1px solid rgb(45, 160, 0); margin-top: 5px ;margin-bottom: 10px; height: max-content;">
+
+    
+     <label for="" class="address">Address</label>
+     <div  id="add" style="display: flex; flex-direction: column; justify-content: start;; margin-top: 3px;">
+        <div>
+            <label for="">FullAdress : </label><span>{{addressObj.fullAddress}}</span>
+        </div>
+
+        <div style="display: flex;align-items: center; gap:20px">
+
+            <div style="overflow: hidden; white-space:nowrap;text-overflow: ellipsis;" >
+               <label for="">State : </label> <span style="display: inline-block;">{{addressObj.state}}</span>
+            </div>
+           
+            <div>
+    
+               <label for="">City : </label> <span>{{addressObj.city}}</span>
+            </div>
+        </div>
+     </div>
+    
+</div>
+
+<ng-template #Withdata>
+     <label for="" class="address">Address</label>
+    <textarea id="" cols="69" rows="9" [(ngModel)]="_address" class="fulladress"></textarea>
+
+    <div class="inner-address-cnt2-form">
+        <div class="name">
+            <span>City</span>
+            <input type="text" [(ngModel)]="_city">
+        </div>
+        <div class="name" >
+            <span >State</span>
+            <input type="text" [(ngModel)]="_state">
+        </div>
+   </div>
+
+   <div class="save-cnt">
+
+       <button class="save-btn" (click)="updateAddress()"   >Save</button>  
+   </div>
+
+</ng-template>
+
+

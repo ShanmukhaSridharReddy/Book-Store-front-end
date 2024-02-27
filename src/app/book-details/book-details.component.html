@@ -1,0 +1,101 @@
+<div class="books-main-cnt" style="display: flex;justify-content: center;">
+    <div class="books-upper-text-cnt" style="height: 65px;display: flex;align-items: center;width:84%;justify-content:space-between;">
+        <div style="display: flex;gap:3px;align-items: center;justify-content: center;">
+            <div style="font-size: 15px;font-weight: 600;font-family: sans-serif;color: rgb(42, 41, 41);">Home/</div>
+            <div style="font-size: 12px;font-family: sans-serif;color: rgb(123, 122, 122);font-weight: 600;">Book({{bookId}})</div>
+         </div>
+
+    </div>
+ 
+ </div>
+ <div style="display: flex;justify-content: center; height: max-content;" >
+    <!--main cnt starts here-->
+    <div style="width: 84%;display: flex;">
+       <div class="bookinfo-inner-cnt-1" style="width:40px;height: 100vh;">
+        <div style="width:35px;height:45px;padding: 3px;border:1px solid rgb(94, 93, 93)"><img [src]="book.image" style="width:100%;height:45px"></div>
+        <div style="width:35px;height:45px;padding: 3px;border:1px solid rgb(76, 75, 75)"><img src="../../../assets/Image 46@2x.png " style="width:100%;height:45px"></div>
+       </div>
+    <div class="bookinfo-inner-cnt-2" >
+          <div style="border: 2px solid black;width: 300px;height:400px;padding: 30px 40px;display: flex;">
+           <img [src]="book.image" style="width: 100%;">
+           </div>
+       <div class="2-button-cnt" style="border:1px solid black;display: flex;justify-content: space-between; ">
+        <button mat-raised-button color="warn" style="width:48%;background-color: brown;border-radius: 0px; height: 38px; color: white;" *ngIf="showAddtoCart else quantity" (click) = "addToCart()"> ADD To CART</button>
+        <ng-template #quantity>
+            <div style="border:1px solid black;display: flex;justify-content: space-evenly; height: 38px ;">
+              <button class = "add-reduce-button"  (click) = "handleBookQuantity('sub')" style="border-radius: 50%; width: 40px; "  >-</button>
+              <input type="number" id = "cart-input" #cartValue [(ngModel)] = "bookQuantity">
+              <button class = "add-reduce-button" (click) = "handleBookQuantity('add')"  style="border-radius: 50%; width: 40px; ">+</button>
+            </div>
+          </ng-template>
+
+        <button mat-raised-button color="warn" style="width:48%;background-color: rgb(87, 86, 86);border-radius: 0px;color: white">WISHLIST</button>
+       </div>
+    </div>
+    <div style="border:2px solid black;width:70%;height: max-content; padding: 0px 30px 30px 50px;display:flex;flex-direction: column;gap:20px">
+      <div class="book-info-tile">{{book.title}}</div>
+      <div class="book-info-author">{{book.author}}</div>
+      <div class="rating-quantity-cnt" style="display: flex;gap:5px">
+          <div class="book-info-rating">4.5*</div>
+          <div class="book-info-quantity">({{book.quantity}})</div>
+      </div>
+      <div class="price-dbp-cnt" style="display: flex;gap:10px"> 
+        <div class="book-info-price">Rs.{{book.price}}</div>
+        <div class="book-info-debricated"><s>Rs.5000</s></div>
+      </div>
+      <div style="display: flex;gap:10px;flex-direction: column;">
+        <div style="border: 1px solid rgb(132, 132, 132);width: 97%;"></div><!--line div-->
+        
+      <div class="bookdatil-static-line" style="text-align: left;
+      font: normal normal normal 15px/20px Roboto,;
+      letter-spacing: 0px;
+      color: #878787;
+      opacity: 1;">Book Detail</div>
+      <div class="bookinfo-deatil" style="word-wrap: break-word;height: max-content; font: normal normal normal 13px/16px Roboto bold ;
+      letter-spacing: 0px;
+      color: #373434;
+      opacity: 1;" >{{book.description}}</div>
+
+      <div style="border: 1px solid rgb(132, 132, 132);width: 97%; margin-top: 10px;"></div><!--line div-->
+      </div>
+      <br>
+      <div class="customer-static-line">Customer feedback</div>
+        <div class="feedback-main-cnt" style="border:1px solid black;width: 95%;height: 180px;padding:10px ;display: flex;flex-direction: column;justify-content: center;gap:10px">
+             <div class="overall-rating-static-cnt">Over all rating</div>
+             <div>
+              <mat-icon svgIcon="black-star-icon" *ngIf = "rating < 1" (click) = "addRating(1)"></mat-icon>
+              <mat-icon svgIcon="yellow-icon" *ngIf = "rating >= 1" (click) = "addRating(1)"></mat-icon>
+              <mat-icon svgIcon="black-star-icon" *ngIf = "rating < 2" (click) = "addRating(2)"></mat-icon>
+              <mat-icon svgIcon="yellow-icon" *ngIf = "rating >=  2" (click) = "addRating(2)"></mat-icon>
+              <mat-icon svgIcon="black-star-icon" *ngIf = "rating < 3" (click) = "addRating(3)"></mat-icon>
+              <mat-icon svgIcon="yellow-icon" *ngIf = "rating >=  3" (click) = "addRating(3)"></mat-icon>
+              <mat-icon svgIcon="black-star-icon" *ngIf = "rating < 4" (click) = "addRating(4)"></mat-icon>
+              <mat-icon svgIcon="yellow-icon" *ngIf = "rating >=  4" (click) = "addRating(4)"></mat-icon>
+              <mat-icon svgIcon="black-star-icon" *ngIf = "rating < 5" (click) = "addRating(5)"></mat-icon>
+              <mat-icon svgIcon="yellow-icon" *ngIf = "rating >=  5" (click) = "addRating(5)"></mat-icon>
+          </div>
+             <input style="width: 99%;height: 80px;" [(ngModel)]="review">
+            <div style="display: flex;justify-content: flex-end;">
+              <button mat-raised-button color="warn" style="background-color: rgb(87, 116, 231);border-radius: 0px;" (click)="addReview()">Submit</button>
+            </div> 
+        </div>
+       
+
+
+       <div class="feed-back-end-cnt">
+        <div></div>
+        <div class="feedback-inner-cnt" *ngFor="let review of reviewList">
+           <div>{{review.name}} </div>
+           <div> <mat-icon svgIcon="yellow-icon" *ngFor="let _ of [].constructor(review.star)"></mat-icon>
+            <mat-icon svgIcon = "black-star-icon" *ngFor = "let _ of [].constructor(5 - review.star)"></mat-icon> </div>
+           <div>{{review.review}} </div>
+        </div>
+    </div>
+
+    </div>
+    
+</div>
+     
+ </div>
+
+ 

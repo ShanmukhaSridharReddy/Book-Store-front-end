@@ -1,0 +1,18 @@
+<!-- <app-header style="width: 100%;"></app-header> -->
+<div class="book-outer-cnt">
+    <div class="header-text" >
+        <div>
+        <span class="books">Books</span>
+        <span class="items"> ({{books.length}})</span>
+    </div>
+        <div class="sort-cnt">
+            <span class="sort">Sort by relevance  </span>
+            
+        </div>
+    </div>
+    <div class="books-list">
+            <div  *ngFor="let book of books" style = "display: flex;">
+            <app-book-card [bookObj]="book"></app-book-card>
+        </div>
+    </div>
+</div>    

@@ -1,0 +1,26 @@
+<div class="header-cnt">
+    <div class="title-name-cnt">
+        <mat-icon svgIcon="open-book-icon" aria-hidden="false" aria-label="Note SVG icon"></mat-icon>
+        <label routerLink="/home/book-container" >BookStore</label>
+    </div>
+
+
+    <div class="search-bar-cnt">
+        <mat-icon matPrefix svgIcon="search-icon" ></mat-icon>
+        <input type="text">
+    </div>
+       
+        
+   
+
+    <div class="profile-cart-icon-cnt">
+        <mat-icon svgIcon="profile-icon" aria-hidden="false" aria-label="Note SVG icon" [matMenuTriggerFor]="clickMenu" ></mat-icon>
+        <mat-icon svgIcon="cart-icon" aria-hidden="false" aria-label="Note SVG icon" routerLink="/home/cart"></mat-icon>
+    </div>
+
+</div>
+
+<mat-menu #clickMenu >
+    <button mat-menu-item>Hai</button>
+    <button mat-menu-item>Logout</button>
+</mat-menu>

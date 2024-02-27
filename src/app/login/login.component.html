@@ -1,0 +1,144 @@
+<!-- <div class="whole-login-cnt">
+    <div class="img-outer-cnt">
+        <div >
+            <img src ="../../assets/2766594.png" alt = "shop_image">
+            <h4>ONLINE BOOK SHOPPING</h4>
+        </div>
+    </div>
+    <div class="login-signup-cnt" >
+        
+            <div style="display: flex;justify-content: space-around;">
+                <h3><label (click)="showLoginForm()" >LOGIN</label></h3>
+                <h3><label (click)="showSignupForm()" >SIGNUP</label></h3>
+            </div>
+            <div *ngIf="showLogin" class="login-cnt">
+                <input type="text" placeholder = "Email*" class ="input-field">
+                <input type="text" placeholder="password*" class ="input-field">
+                <button id ="login-button">Login</button>
+                <div style = "display: flex;align-items: center;align-self: center;">
+                    <div class ="line"></div>
+                        <h4>OR</h4>
+                    <div class ="line"></div>
+                </div>
+                <div class="button-cnt" >
+                    <button id ="facebook-button">Facebook</button>
+                    <button id ="Google-button">Google</button>                                 
+                </div>
+            </div>
+        
+        <div *ngIf="showSignup" class="Signup_cnt">
+            <input type="text" placeholder="Full Name" class ="input-field">
+            <input type="text" placeholder="Email" class ="input-field">
+            <input type="text" placeholder="Password" class ="input-field">
+            <input type="text" placeholder="Mobile number" class ="input-field">
+            <button id ="login-button">Signup</button>
+        </div>
+    </div>
+</div> -->
+
+<div class="login-signup-outer-cnt">
+
+    <div class="login-signup-inner-cnt">
+        <div class="img-banner-cnt">
+            <div>
+                <div>
+                    <img src ="../../assets/2766594.png" >
+                </div>
+                <div>
+                    <span>ONLINE BOOK SHOPPING</span>
+                </div>
+            </div>
+                
+        </div>
+        <div class="login-signup-cnt">
+            <div  class="login-signup-ctrl-cnt">
+                <div class="login-signup-title-cnt">
+                    <div class="top-tittle" >
+                        <span (click)="showLoginForm()" >Login</span>
+                        <div class="title-highliter" *ngIf = "showLogin"></div>
+                    </div>
+                    <div class="top-tittle">
+                        <span (click)="showSignupForm()" >Sign Up</span>
+                        <div class="title-highliter" *ngIf="!showLogin"></div>
+
+                    </div>
+                </div>
+                
+                <form *ngIf="showLogin else signup"class="login-forgotpassword-cnt" [formGroup]="loginForm">
+                        <mat-form-field appearance="outline" class="login-field">
+                            <mat-label>Email</mat-label>
+                            <input  formControlName ="email"  matInput placeholder="Email">
+                        </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="login-field">
+                        <mat-label>Password</mat-label>
+                        <input formControlName ="password" matInput placeholder="Password">
+                    </mat-form-field>
+                    
+                    <button class="forgot-btn" mat-button color="primary">Forget password</button>
+                    <button class="login-btn" (click)="loginClick()" color="primary">Login</button>
+                </form>
+                  <div class="or-cnt" *ngIf = "showLogin">
+                    <div class="dash"></div>
+                    <span>OR</span>
+                    <div class="dash"></div>
+                  </div>
+                  <div class="facebook-btn-cnt" *ngIf = "showLogin">
+                    <button mat-raised-button color="primary">FaceBook</button>
+                    <button mat-raised-button color="primary">Google</button>
+                  </div>
+                
+            </div>
+        </div>
+
+        <ng-template  #signup  class="Signup_cnt">
+
+          
+             
+            <!-- <div class="signup-cnt"> -->
+                <!-- <div class="login-signup-ctrl-cnt"> -->
+                    <!-- <div class="login-signup-title-cnt"> -->
+                        <!-- <div class="top-tittle">
+                            <span (click)="showLoginForm()">Login</span>
+                            <div class="title-highliter"></div>
+                        </div>
+                        <div class="top-tittle">
+                            <span (click)="showSignupForm()">Sign Up</span>
+                            <div class="title-highliter"></div>
+    
+                        </div> -->
+                    <!-- </div> -->
+                    
+                    <form class="login-forgotpassword-cnt" [formGroup]="signUpForm">
+                            <mat-form-field appearance="outline" class="login-field">
+                                <mat-label>Full Name</mat-label>
+                                <input  formControlName ="userName"  matInput placeholder="Full Name">
+                            </mat-form-field>
+    
+                        <mat-form-field appearance="outline" class="login-field">
+                            <mat-label>Email</mat-label>
+                            <input formControlName ="email" matInput placeholder="Email">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="login-field">
+                            <mat-label>Password</mat-label>
+                            <input formControlName ="password" matInput placeholder="Password">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline" class="login-field">
+                            <mat-label>PhoneNo</mat-label>
+                            <input formControlName ="phoneNo" matInput placeholder="PhoneNo">
+                        </mat-form-field>
+                        
+                       
+                        <button class="login-btn" (click)="signupClick()" color="primary">SignUp</button>
+                    </form>
+                      
+                    
+                <!-- </div> -->
+            <!-- </div> -->
+
+     
+        </ng-template>
+
+
+    </div>
+
